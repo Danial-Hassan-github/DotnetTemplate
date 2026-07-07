@@ -1,4 +1,5 @@
 ﻿using DotnetTemplate.Application.Interfaces;
+using DotnetTemplate.Infrastructure.Authentication;
 using DotnetTemplate.Infrastructure.Data;
 using DotnetTemplate.Infrastructure.Repositories;
 using DotnetTemplate.Infrastructure.Security;
@@ -16,6 +17,7 @@ namespace DotnetTemplate.Infrastructure
             services.AddDbContext<MyDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
             return services;
         }
 
