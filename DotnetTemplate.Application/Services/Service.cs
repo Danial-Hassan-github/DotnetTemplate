@@ -1,6 +1,6 @@
 ﻿namespace DotnetTemplate.Application.Services
 {
-    public class UserService
+    public class Service
     {
     }
 }
